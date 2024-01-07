@@ -16,6 +16,34 @@
     </nav>
     <?php
         require './DB/conexion.php';
+        $sql = "DESCRIBE livres";
+        $res = $pdo->query($sql);
+        $colonnes = $res->fetchAll();
+        echo'<table><tr>';
+        foreach ($colonnes as $row){
+            echo '<th>'.$row[0]."</th>";
+        }
+        echo'</tr>';
+        $sql= "SELECT * FROM livres";
+        $res = $pdo->query($sql);
+        $tab = $res->fetchAll(PDO::FETCH_NUM);
+        foreach ($tab as $row){
+            echo'<tr>';
+            for ($i=0 ; $i< count($row);$i++){
+                echo "<td>".htmlentities($row[$i])."</td>";
+            }
+            echo'</tr>';
+        }
+        echo'</table>';
+       
     ?>
 </body>
 </html>
+
+<!-- 
+[
+    [titre, auteur, anne , id,titre, auteur, anne , id],
+    [titre, auteur, anne , id],
+    [titre, auteur, anne , id],
+    [titre, auteur, anne , id],
+] -->
