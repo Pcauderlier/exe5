@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost"; // ne change pas qu'on soit en local ou en distant
-$db = "exe5"; //user de phpmyadmin
+$db = ""; //user de phpmyadmin
 $user = "root"; // user de phpmyadmin
 $pass= "root"; // mdp de phpmyadmin
 $chrs = "utf8mb4";
