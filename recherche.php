@@ -48,14 +48,9 @@
                 if (count($tab) > 0){
                     echo '<table>';
                     foreach ($tab as $row){
-                        echo'<tr>';
-                        echo "<td>".htmlentities($row['ID_Livre'])."</td>";
-                        echo "<td>".$row['Auteur']."</td>";
-                        echo "<td>".$row['ID_Livre']."</td>";
-                        echo "<td>".$row['ID_Livre']."</td>";
-                        // for ($i=0 ; $i< count($row);$i++){
-                        //     echo "<td>".htmlentities($row[$i])."</td>";
-                        // }
+                        for ($i=0 ; $i< count($row);$i++){
+                            echo "<td>".htmlentities($row[$i])."</td>";
+                        }
                         echo'</tr>';
                     }
                     echo '</table>';
